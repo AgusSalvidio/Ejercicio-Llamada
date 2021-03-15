@@ -15,3 +15,9 @@ BaselineOfSistemaDeFacturacion >> baseline: spec [
 				package: 'Sistema-de-Facturacion-Tests' with: [ spec requires: 'Sistema-de-Facturacion-Modelo' ]
 			]
 ]
+
+{ #category : #accessing }
+BaselineOfSistemaDeFacturacion >> projectClass [
+
+	^ MetacelloCypressBaselineProject
+]
