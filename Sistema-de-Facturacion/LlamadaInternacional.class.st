@@ -30,3 +30,11 @@ LlamadaInternacional >> initializeConDestinoA: unPais [
 	
 	pais := unPais
 ]
+
+{ #category : #printing }
+LlamadaInternacional >> printOn: aStream [
+
+	aStream
+		nextPutAll: 'Llamada Internacional a ';
+		nextPutAll: pais
+]

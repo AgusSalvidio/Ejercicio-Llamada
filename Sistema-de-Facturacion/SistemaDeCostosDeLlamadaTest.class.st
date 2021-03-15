@@ -13,7 +13,7 @@ SistemaDeCostosDeLlamadaTest >> ochoAM [
 	^ Time hour:8  minute:0  second:0 
 ]
 
-{ #category : #accesing }
+{ #category : #accessing }
 SistemaDeCostosDeLlamadaTest >> ochoPM [
 	
 	^ Time hour: 20  minute:0  second:0 

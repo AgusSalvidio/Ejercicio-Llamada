@@ -50,6 +50,18 @@ Factura >> cantidadLlamadasNacionales [
 	^ detallesDeLlamadasNacionales size
 ]
 
+{ #category : #accessing }
+Factura >> detallesDeLlamadasInternacionales [
+
+	^ detallesDeLlamadasInternacionales
+]
+
+{ #category : #accessing }
+Factura >> detallesDeLlamadasLocales [
+
+	^ detallesDeLlamadasLocales
+]
+
 { #category : #initialization }
 Factura >> detallesDeLlamadasNacionales [
 

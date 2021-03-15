@@ -5,6 +5,35 @@ Class {
 }
 
 { #category : #printing }
+ImpresoraDeFactura >> agregarDetalleDeLlamadasInternacionalesDe: unaFactura en: aStream [
+
+	| detallesDeLlamadasInternacionales |
+	detallesDeLlamadasInternacionales:= unaFactura detallesDeLlamadasInternacionales.
+	detallesDeLlamadasInternacionales
+		ifNotEmpty: [ aStream
+				tab;
+				nextPutAll: 'Detalle de Llamadas Internacionales: ';
+				nextPutAll: unaFactura montoTotalDeDetallesDeLlamadasInternacionales asString;
+				cr.
+				detallesDeLlamadasInternacionales do:[:detalleDeLlamada | aStream tab; tab; print: detalleDeLlamada;cr. ] ]
+			
+]
+
+{ #category : #printing }
+ImpresoraDeFactura >> agregarDetalleDeLlamadasLocalesDe: unaFactura en: aStream [
+
+	| detallesDeLlamadasLocales |
+	detallesDeLlamadasLocales:= unaFactura detallesDeLlamadasLocales.
+	detallesDeLlamadasLocales
+		ifNotEmpty: [ aStream
+				tab;
+				nextPutAll: 'Detalle de Llamadas Locales: ';
+				nextPutAll: unaFactura montoTotalDeDetallesDeLlamadasLocales asString;
+				cr.
+				detallesDeLlamadasLocales do:[:detalleDeLlamada | aStream tab; tab; print: detalleDeLlamada;cr. ] ]
+]
+
+{ #category : #printing }
 ImpresoraDeFactura >> agregarDetalleDeLlamadasNacionalesDe: unaFactura en: aStream [
 
 	| detallesDeLlamadasNacionales |
@@ -43,6 +72,8 @@ ImpresoraDeFactura >> imprimir: unaFactura [
 		streamContents: [ :aStream | 
 			self 
 				agregarTituloYAbonoBasicoDe: unaFactura en: aStream;
+				agregarDetalleDeLlamadasLocalesDe: unaFactura en: aStream;
 				agregarDetalleDeLlamadasNacionalesDe: unaFactura en: aStream;
+				agregarDetalleDeLlamadasInternacionalesDe: unaFactura en: aStream;
 				agregarMontoTotalDe: unaFactura en: aStream ]
 ]

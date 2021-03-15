@@ -51,3 +51,15 @@ LlamadaLocal >> initializeParaElDia: unDia iniciandoALas: unaHoraDeInicio finali
 	horaDeInicio := unaHoraDeInicio.
 	horaDeFinalizacion := unaHoraDeFinalizacion
 ]
+
+{ #category : #printing }
+LlamadaLocal >> printOn: aStream [
+
+	aStream
+		nextPutAll: 'Llamada Local realizada el ';
+		nextPutAll: dia;
+		nextPutAll: ', iniciada a las ';
+		print: horaDeInicio;
+		nextPutAll: ' y finalizada a las ';
+		print: horaDeFinalizacion
+]
